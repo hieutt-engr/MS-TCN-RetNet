@@ -1,0 +1,16 @@
+python train.py \
+  --data_dir ./data/2017-subaru-forester/preprocessed \
+  --save_folder ./save/ms_tcn_retnet_run1 \
+  --model_name ms_tcn_retnet \
+  --batch_size 128 \
+  --epochs 100 \
+  --learning_rate 1e-3 \
+  --weight_decay 1e-4 \
+  --device cuda \
+  --pin_memory \
+  --amp \
+  --scheduler cosine_restart \
+  --tcn_depth 2 \
+  --retention_depth 2 \
+  --retention_heads 4 \
+  --gpu_id 1 > ./save/log/train_ms_tcn_retnet_run1.log 2>&1 &
