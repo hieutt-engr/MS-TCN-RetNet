@@ -1,0 +1,20 @@
+python train_ms_tcn_retnet_fgsm_rs_at.py \
+  --data_dir ./data/2017-subaru-forester/preprocessed \
+  --checkpoint ./save/ms_tcn_retnet_run1/ms_tcn_retnet_best_test_macro_f1.pth \
+  --save_folder ./save/ms_tcn_retnet_fgsm_rs_ft \
+  --model_name ms_tcn_retnet_fgsm_rs_ft \
+  --device cuda \
+  --epochs 20 \
+  --batch_size 128 \
+  --learning_rate 1e-4 \
+  --weight_decay 1e-4 \
+  --epsilon 4/255 \
+  --alpha 4/255 \
+  --lambda_clean 1.0 \
+  --lambda_adv 0.5 \
+  --attack_steps_eval 10 \
+  --adv_eval_freq 2 \
+  --amp \
+  --pin_memory \
+  --print_freq 200 \
+  --gpu_id 1 > ./save/log/train_fgsm_rs_at.log 2>&1 &

@@ -16,7 +16,6 @@ Notes
 3) For anomaly detection like DCATCN, start with mode="regression" and use
    residual-based scoring outside this model.
 
-Author: OpenAI ChatGPT
 """
 
 from __future__ import annotations
